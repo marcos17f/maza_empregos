@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .link-brand,
+  .link-brand:link,
+  .link-brand:visited,
+  .link-brand:hover,
+  .link-brand:active {
+    color: var(--brand-primary);
+  }
+
+  .full-bleed {
+    width: calc(100vw - var(--scrollbar-width, 0px));
+    margin-inline: calc(50% - (100vw - var(--scrollbar-width, 0px)) / 2);
+  }
+}
+
+:root {
+  --surface-muted: #f5f3f3;
+  --surface-card: #f3eeee;
+  --surface-light: #faf6f6;
+  --promo-surface: #f7f2f2;
+  --brand-primary: #c8161d;
+  --brand-dark: #991016;
+  --brand-accent: #0ea57a;
+  --page-max: 1440px;
+  --page-gutter: clamp(16px, 4vw, 48px);
+  --radius-card: 16px;
+  --space-header: 16px;
+  --space-section: 16px;
+  --space-card: 16px;
+  --header-height: 115px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --header-height: 81px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --space-header: 8px;
+    --space-section: 24px;
+    --space-card: 24px;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #111827;
+  background-color: #ffffff;
+  line-height: 1.5;
+  font-family: var(--font-lato), Arial, sans-serif;
+  overflow-x: clip;
+  scroll-behavior: smooth;
+}
+
+.home-font,
+.home-font *:not(.font-DMSerif) {
+  font-family: var(--font-lato), Arial, sans-serif;
+}
+
+:where(a, button):focus-visible {
+  outline: 2px solid var(--brand-primary);
+  outline-offset: 2px;
+}
+
+#__next {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #e2e8f0;
+  border-radius: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(91deg, #c8161d 0%, #991016 100%);
+  border-radius: 8px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -10%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes partnerMarquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.partner-marquee-track {
+  animation: partnerMarquee 45s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .partner-marquee-track {
+    animation: none;
+  }
+}

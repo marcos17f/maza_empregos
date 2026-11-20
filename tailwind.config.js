@@ -1,0 +1,105 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  darkMode: ["class"],
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/ui/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/utils/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    screens: {
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+      "3xl": "1920px",
+      cellphone: "412px",
+    },
+    fontFamily: {
+      DMSerif: ["DM Serif Display", "serif"],
+      sans: ["var(--font-lato)", "Arial", "sans-serif"],
+      WorkSans: ["var(--font-lato)", "Arial", "sans-serif"],
+      OpenSans: ["var(--font-lato)", "Arial", "sans-serif"],
+    },
+    extend: {
+      spacing: {
+        "header-gap": "var(--space-header)",
+        section: "var(--space-section)",
+        card: "var(--space-card)",
+        "header-offset": "calc(var(--header-height) + var(--space-header))",
+        gutter: "var(--page-gutter)",
+      },
+      maxWidth: {
+        page: "var(--page-max)",
+      },
+      borderRadius: {
+        card: "var(--radius-card)",
+      },
+      boxShadow: {
+        nav: "0px 1.13px 2.80px rgba(0, 0, 0, 0.28)",
+        HomeBanner: "0px 2px 4px 0px rgba(0, 0, 0, 0.35)",
+        homeProductCard: "0px 2px 4px 1px rgba(0, 0, 0, 0.14)",
+      },
+      letterSpacing: {
+        tiny: "-0.01em",
+        tiny2: "-0.02em",
+        tiny3: "-0.03em",
+        tiny4: "-0.04em",
+        tiny5: "-0.05em",
+      },
+      colors: {
+        "surface-muted": "var(--surface-muted)",
+        "surface-card": "var(--surface-card)",
+        "surface-light": "var(--surface-light)",
+        "promo-surface": "var(--promo-surface)",
+        brand: "var(--brand-primary)",
+        "brand-dark": "var(--brand-dark)",
+        "brand-accent": "var(--brand-accent)",
+        primary: {
+          50: "#FDF2F2",
+          100: "#FCE4E5",
+          200: "#DC2626",
+          400: "#C8161D",
+          600: "#991016",
+          light: "#E11D25",
+          main: "#C8161D",
+          dark: "#991016",
+        },
+        neutral: {
+          50: "#ffffff",
+          75: "#fafafa",
+          100: "#f7f7f7",
+          125: "#f2f2f2",
+          150: "#e5e5e5",
+          200: "#cccccc",
+          300: "#b2b2b2",
+          400: "#999999",
+          500: "#7f7f7f",
+          600: "#4c4c4c",
+          700: "#191919",
+          platinum: "#E1E6E1",
+          night: "#131316",
+        },
+        success: "#0ea57a",
+        warning: "#F4BB2A",
+        error: "#BF3030",
+      },
+      backgroundImage: {
+        brandGradient: "linear-gradient(93deg, #18181B 0%, #8F1016 55%, #C8161D 100%)",
+        accentGradient: "linear-gradient(93deg, #991016 0%, #C8161D 100%)",
+      },
+      animation: {
+        navopen: "navopen .25s ease-out",
+      },
+      keyframes: {
+        navopen: {
+          "0%": { width: "0", opacity: "0" },
+          "100%": { width: "85%", opacity: "1" },
+        },
+      },
+    },
+  },
+  plugins: [require("tailwindcss-animate")],
+};
